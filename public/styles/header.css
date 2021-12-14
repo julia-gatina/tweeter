@@ -5,4 +5,7 @@ header {
   width: 100%;
   justify-content: center;
   align-items: center;
+  background-color: rgb(155, 157, 157);
+  background-image: url("../images/brick-wall.png");
 }
+
