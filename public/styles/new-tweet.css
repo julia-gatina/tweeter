@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  align-content: center;
+  align-items:flex-start;
+}
+
+.tweet-text {
+  width: 90;
+}
