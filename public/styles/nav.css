@@ -1,13 +1,17 @@
 nav {
-  background-color: #4056A1;
+  position: sticky;
+  width: 100%;
+  background-color: #99c435;
   height: 120px;
   color: #FFFFFF;
-  justify-content: flex-end;
 }
 
 #logo {
+  position: absolute;
+  top: 37px;
   font-family: 'Bungee','Sans-Serif', cursive;
-  font-size: 30px;
-  margin-left:1.5em ;
-  
+  font-size: 33px;
+  text-shadow: 2px 2px 2px #106d23;
+  margin-left:1.5em;
+  margin-right:1.5em;
 }
