@@ -1,9 +1,39 @@
-.container {
+/* * {
+  box-sizing: border-box;
+} */
+
+
+form {
   display: flex;
-  align-content: center;
-  align-items:flex-start;
+  flex-direction: column;
+}
+#tweet-text {
+  width: 50;
+  border-width: 5px;
+  border-color: #97B09F;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  background-color: #f4f1ec;
 }
 
-.tweet-text {
-  width: 90;
+#tweet-button {
+  font-family: "Bungee";
+  font-size: 20px;
+  color: darkslategrey;
+  width: 100px;
+  height: 40px;
+  border-radius: 10%;
+  box-shadow: 1px 1px 3px darkslategrey;
+  background-image: linear-gradient(#A2E039, #e2f078, #A2E039);
+  border-color: white;
+  
+}
+
+.counter {
+  font-family: "Bungee";
+  position: relative;
+  float: right;
 }
