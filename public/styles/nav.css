@@ -1,5 +1,7 @@
-nav {
+.navbar {
+  Display: flex;
   position: sticky;
+  align-items: center;  
   width: 100%;
   background-color: #99c435;
   height: 120px;
@@ -7,11 +9,22 @@ nav {
 }
 
 #logo {
-  position: absolute;
-  top: 37px;
+  flex:2;
   font-family: 'Bungee','Sans-Serif', cursive;
   font-size: 33px;
-  text-shadow: 2px 2px 2px #106d23;
+  text-shadow: 2px 2px 3px #106d23;
   margin-left:1.5em;
   margin-right:1.5em;
+}
+
+.new-tweet {
+  flex:1;
+  flex-direction: row;
+  align-items: centre;
+  margin-left:1.5em;
+  margin-right:1.5em;
+}
+
+i {
+  text-shadow: 2px 2px 3px #106d23;
 }
