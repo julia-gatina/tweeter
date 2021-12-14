@@ -1,18 +1,20 @@
 .navbar {
-  Display: flex;
   position: sticky;
-  align-items: center;  
+  Display: flex;
+  align-items: center; 
+  justify-content: center; 
   width: 100%;
   background-color: #99c435;
   height: 120px;
   color: #FFFFFF;
+  box-shadow: 2px 2px 8px #307207;
 }
 
 #logo {
-  flex:2;
+  flex:2.5;
   font-family: 'Bungee','Sans-Serif', cursive;
   font-size: 33px;
-  text-shadow: 2px 2px 3px #106d23;
+  text-shadow: 2px 2px 3px #307207;
   margin-left:1.5em;
   margin-right:1.5em;
 }
@@ -26,5 +28,5 @@
 }
 
 i {
-  text-shadow: 2px 2px 3px #106d23;
+  text-shadow: 2px 2px 3px #307207;
 }
