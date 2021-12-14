@@ -26,8 +26,9 @@
     <div>
     <nav class="navbar">
       <div id="logo"><span>tweeter</span></div>
-      <div class="new-tweet"><span><b>Write</b> a new tweet</span> 
-      <i class="new-tweet">&#65086</i></div>
+      <div class="write-tweet">
+        <span>Write a new tweet</span>
+      <i>&#65086</i></div>
     </nav>
     </div>
 
@@ -42,8 +43,17 @@
   </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi obcaecati perspiciatis culpa expedita sint eaque id iusto molestiae laborum, accusamus eligendi magni ipsum. Dicta esse minima ut non soluta modi?
-      </p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
