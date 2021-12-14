@@ -1,0 +1,13 @@
+nav {
+  background-color: #4056A1;
+  height: 120px;
+  color: #FFFFFF;
+  justify-content: flex-end;
+}
+
+#logo {
+  font-family: 'Bungee','Sans-Serif', cursive;
+  font-size: 30px;
+  margin-left:1.5em ;
+  
+}
