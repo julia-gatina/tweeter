@@ -9,16 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,600;1,300&display=swap" rel="stylesheet">
-    
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+    
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <script src="https://kit.fontawesome.com/8d362ee437.js" crossorigin="anonymous"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -31,30 +31,45 @@
       <div id="logo"><span>tweeter</span></div>
       <div class="write-tweet">
         <span><b>Write</b> a new tweet</span>
-      <i>&#65086</i></div>
+        <i class="fas fa-angle-double-down"></i>
+    </div>
     </nav>
     </div>
 
-    <header>
+    <header class="page-header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
       <br>
       <div>
-          <h2>Your Name</h2>
+          <h2><b>Your</b> Name</h2>
       </div>
   </header>
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main class="main-container">
       <section class="new-tweet">
         <h3>Compose Tweet</h3>
         <form method="POST" action="/tweets">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div>
             <button id="tweet-button" type="submit">Tweet</button>
-            <output id="tweet-counter" name="counter" class="counter" for="tweet-text"></output>
+            <output name="counter" for="tweet-text" class="counter"></output>
           </div>
         </form>
+      </section>
+      <section class="tweet-container">
+        <article>
+          <header class="tweet-container">
+            Rhoda Jacobs
+          </header>
+          If I have seen further it is by standing on the shoulders of gians
+          <footer>
+            <line>10 days ago</line>
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
+          </footer>
+        </article>
       </section>
     </main>
   </body>
