@@ -37,3 +37,8 @@ form {
   position: relative;
   float: right;
 }
+
+.red-counter {
+  font-family: "Bungee";
+  color: red;
+}

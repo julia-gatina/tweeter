@@ -11,6 +11,11 @@ $tweetText.on('keypress', function (event) {
   const $currentValue = event.target.value.length;
   console.log($currentValue)
   const amountLeft = $maxValue - $currentValue;
+
+  if (amountLeft < 0) {
+    $tweetCounter.addClass("red-counter");
+  }
+  
   $tweetCounter.val(amountLeft);
 
 })
