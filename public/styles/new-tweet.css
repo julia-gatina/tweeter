@@ -1,11 +1,9 @@
-/* * {
-  box-sizing: border-box;
-} */
-
 
 form {
   display: flex;
   flex-direction: column;
+ 
+/* tweet text input */  
 }
 #tweet-text {
   width: 50;
@@ -14,6 +12,7 @@ form {
   border-top: hidden;
   border-left: hidden;
   border-right: hidden;
+  outline: none;
   margin-top: 5px;
   margin-bottom: 20px;
   background-color: #f4f1ec;
@@ -32,12 +31,14 @@ form {
   
 }
 
+/* entered characters counter */
 .counter {
   font-family: "Bungee";
   position: relative;
   float: right;
 }
 
+/* applied when tweet exceeds 140 chars */
 .red-counter {
   font-family: "Bungee";
   color: red;
