@@ -2,7 +2,7 @@
   position: sticky;
   Display: flex;
   align-items: center; 
-  justify-content: stretch; 
+  justify-content: space-between; 
   width: 100%;
   background-color: #99c435;
   height: 120px;
@@ -11,7 +11,6 @@
 }
 
 #logo {
-  flex:2.5;
   font-family: 'Bungee','Sans-Serif', cursive;
   font-size: 33px;
   text-shadow: 2px 2px 3px #307207; 
@@ -26,11 +25,15 @@
 }
 
 .write-tweet {
-  flex:0.7;
   flex-direction: row;
-  align-items: centre;
+  margin-right:1.5em;
 }
 
-i {
+span.write-tweet {
+  position: relative;
+  float: right;
+ }
+
+i.write-tweet {
   text-shadow: 2px 2px 3px #307207;
 }
