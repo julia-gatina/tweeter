@@ -13,15 +13,12 @@
   border-style: solid;
   border-color: #97B09F;
   border-width: 5px 5px 5px 5px;
+  margin-bottom: 25px;
 }
 
 .tweet header {
   display: flex;
   justify-content: space-between;
-}
-
-article.tweet header div.username i {
-  color: red;
 }
 
 article.tweet main {
@@ -30,6 +27,14 @@ article.tweet main {
 
 .tweet:hover {
   box-shadow: 2px 2px 8px #99c435;
+}
+
+article.tweet footer {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  border-top: 5px solid;
+  padding-top: 10px;
 }
 
 .fas {
