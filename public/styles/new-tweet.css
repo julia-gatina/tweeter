@@ -18,6 +18,7 @@ form {
   background-color: #f4f1ec;
 }
 
+
 #tweet-button {
   font-family: "Bungee";
   font-size: 20px;
@@ -28,9 +29,14 @@ form {
   box-shadow: 1px 1px 3px darkslategrey;
   background-image: linear-gradient(#A2E039, #d7edb2, #A2E039);
   border-color: white;
+  filter:sepia();
+  transition: filter 0.3s ease-in-out;
   
 }
 
+#tweet-button:hover {
+  filter:none;
+}
 /* entered characters counter */
 .counter {
   font-family: "Bungee";
