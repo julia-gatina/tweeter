@@ -28,8 +28,9 @@ body {
  main {
    width: 90%;
    margin: 0 auto;
+   margin-bottom: 100px;
    background-color: #f4f1ec;
-   height: 400px;
+   height: auto;
  }
 
  
