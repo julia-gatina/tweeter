@@ -1,3 +1,14 @@
-.tweet-container {
+section .tweet-container {
+  display: flex;
   background-color: #f4f1ec;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  
+}
+
+.tweet-container article {
+  border-style: solid;
+  border-color: #97B09F;
+  border-width: 5px 5px 5px 5px;
 }
