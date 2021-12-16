@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
-  
+
 }
 
 .tweet {
@@ -15,8 +15,21 @@
   border-width: 5px 5px 5px 5px;
 }
 
+.tweet header {
+  display: flex;
+  justify-content: space-between;
+}
+
+article.tweet header div.username i {
+  color: red;
+}
+
+article.tweet main {
+  padding: 10px;
+}
+
 .tweet:hover {
-  box-shadow: 2px 2px 8px #99c435;;
+  box-shadow: 2px 2px 8px #99c435;
 }
 
 .fas {
