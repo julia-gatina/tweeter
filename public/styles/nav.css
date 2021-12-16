@@ -17,14 +17,14 @@
   font-family: 'Bungee','Sans-Serif', cursive;
   font-size: 33px;
   text-shadow: 2px 2px 3px #307207; 
-
   margin-left:1.5em;
   margin-right:1.5em;
 }
 
 #logo:hover {
-  font-size: 33.5px;
   color: yellow;
+  transition: 0.5s ease-in-out;
+  filter:blur();
 }
 
 .write-tweet {

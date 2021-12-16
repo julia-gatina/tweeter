@@ -8,14 +8,14 @@
   
 }
 
-.tweet-container article {
+.tweet {
   padding: 15px;
   border-style: solid;
   border-color: #97B09F;
   border-width: 5px 5px 5px 5px;
 }
 
-.tweet-container:hover {
+.tweet:hover {
   box-shadow: 2px 2px 8px #99c435;;
 }
 
