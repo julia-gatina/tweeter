@@ -6,12 +6,8 @@ form {
 /* tweet text input */  
 }
 #tweet-text {
-  width: 50;
-  border-width: 5px;
-  border-color: #97B09F;
-  border-top: hidden;
-  border-left: hidden;
-  border-right: hidden;
+  border: none;
+  border-bottom: 5px solid #97B09F;
   outline: none;
   margin-top: 5px;
   margin-bottom: 20px;
@@ -37,8 +33,13 @@ form {
 #tweet-button:hover {
   filter:none;
 }
+
+section.new-tweet form label {
+  color: #6e6e6e;
+}
+
 /* entered characters counter */
-.counter {
+#counter {
   font-family: "Bungee";
   position: relative;
   float: right;
