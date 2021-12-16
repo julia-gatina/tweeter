@@ -29,6 +29,13 @@ article.tweet main {
   box-shadow: 2px 2px 8px #99c435;
 }
 
+.tweet header div.username {
+  width: 7em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 article.tweet footer {
   display: flex;
   justify-content: space-between;

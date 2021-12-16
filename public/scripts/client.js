@@ -4,6 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+$(document).ready(function() {
+
 const userDataObject = {
   "user": {
     "name": "Newton",
@@ -16,14 +18,14 @@ const userDataObject = {
   "created_at": 1461116232227
 };
 
-//const $tweet = $(`<line class="posted-tweet">Hello world</line>`);
 
 const createTweetElement = function(tweetObj) {
   const $tweet = $(`
   <article class="tweet">
     <header>
       <div class="username">
-        <i class="far fa-smile-wink"></i>
+        <img class="avatars" src=${tweetObj.user.avatars} alt="User Avatar"> 
+        
         <span>${tweetObj.user.name}</span>
       </div>
       <div class="handle">${tweetObj.user.handle}</div>
@@ -35,7 +37,7 @@ const createTweetElement = function(tweetObj) {
     </main>
   
     <footer>
-      <line>${new Date(tweetObj.created_at).toLocaleDateString('en-US')}</line>
+      <line>${timeago.format(tweetObj.created_at)}</line>
       <div><i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
         <i class="fas fa-heart"></i>
@@ -46,10 +48,9 @@ const createTweetElement = function(tweetObj) {
   return $tweet;
 }
 
-setTimeout(() => {
+
   const createdTweet = createTweetElement(userDataObject);
   $('#tweets-container').append(createdTweet);
-}, 1000);
 
 
-// const $tweet = createTweetElement(tweetData);
+});
