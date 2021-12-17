@@ -7,7 +7,6 @@ $(document).ready(function() {
   $tweetText.on('keypress', function(event) {
     const $maxValue = 140;
     const $currentValue = event.target.value;
-    console.log($currentValue.length);
     const amountLeft = $maxValue - $currentValue.length;
 
     if (amountLeft < 0) {

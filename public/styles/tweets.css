@@ -30,9 +30,9 @@ article.tweet main {
 }
 
 .tweet header div.username {
-  width: 8em;
   display: flex;
-  justify-content: space-around;
+  width: 30%;
+  justify-content: space-evenly;
   align-items: center;
 }
 
