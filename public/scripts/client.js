@@ -18,7 +18,10 @@ $(document).ready(function() {
       url: "http://localhost:8080/tweets",
       method: "POST",
       data: data,
-      success: () => loadTweets(),
+      success: () => {
+        loadTweets();
+        resetInputElements();
+      },
       error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });
 
@@ -34,12 +37,13 @@ $(document).ready(function() {
         }
       });
     };
-
-    // $('#tweet-text').val('');
-    const formElement = event.target;
-    const textareaElement = formElement.getElementsByTagName('textarea')[0];
-    textareaElement.value = '';
   });
+
+  const resetInputElements = function() {
+    $('#tweet-text').val('');
+    $('#counter').val('140');
+  };
+
 
   /**
    * takes in an array of tweet objects, calls createTweetElement for each tweet and appends each one to the #tweets-container.
