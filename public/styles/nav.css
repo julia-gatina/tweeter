@@ -12,6 +12,7 @@
   box-shadow: 2px 2px 10px #397207;
   opacity: 95%;
   padding: 1em 1.5em;
+  z-index: 100; /* top layer */
 }
 
 #logo {

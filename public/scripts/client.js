@@ -31,22 +31,6 @@ const data = [
   }
 ];
 
-
-/**
- * takes in an array of tweet objects, calls createTweetElement for each tweet and appends each one to the #tweets-container.
- * @param {*} tweets
- * @returns createdTweet
- */
-const renderTweets = function(tweets) {
-  let createdTweet;
-  // loops through tweets and createTweetElement for each tweet
-  for (const tweet of tweets) {
-    // takes return value and appends it to the tweets container
-    createdTweet = $('#tweets-container').append(createTweetElement(tweet));
-  }
-  return createdTweet;
-}
-
 /**
  * takes in single tweet object and creates a markup that will be used to render tweets dynamically
  * @param {*} single tweetObj 
@@ -79,7 +63,23 @@ const createTweetElement = function(tweetObj) {
   </article>
     `);
   return $tweet;
-}
+};
+
+
+/**
+ * takes in an array of tweet objects, calls createTweetElement for each tweet and appends each one to the #tweets-container.
+ * @param {*} tweets
+ * @returns createdTweet
+ */
+const renderTweets = function(tweets) {
+  $('.container').empty();
+  let createdTweet;
+  // loops through tweets and createTweetElement for each tweet
+  for (const tweet of tweets) {
+    // takes return value and appends it to the tweets container
+    createdTweet = $('#tweets-container').append(createTweetElement(tweet));
+  }
+};
 
 renderTweets(data);
 
