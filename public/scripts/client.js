@@ -6,29 +6,29 @@
 
 $(document).ready(function() {
 
-  const data = [{
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
+  // const data = [{
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png",
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1461116232227
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd"
+  //     },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ];
 
   /**
    * takes in single tweet object and creates a markup that will be used to render tweets dynamically
@@ -79,6 +79,39 @@ $(document).ready(function() {
     }
   };
 
-  renderTweets(data);
+  // serialize the form data and send it to the server as a query string
+  const $newTweet = $('form.new-tweet')
+
+  $newTweet.on('submit', (event) => {
+    const data = $newTweet.serialize();
+
+    event.preventDefault();
+
+    $.ajax({
+      url: "http://localhost:8080/tweets",
+      method: "POST",
+      data: data,
+      success: function(response) {
+        loadTweets(response);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+      }
+    });
+  });
+
+  const loadTweets = function(tweet) {
+
+    $.ajax({
+      url: "http://localhost:8080/tweets",
+      method: "GET",
+      success: function(tweet) {
+        renderTweets(tweet);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+      }
+    });
+  };
 
 });
