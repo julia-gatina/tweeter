@@ -18,12 +18,24 @@ $(document).ready(function() {
 
   })
 
+ // serialize the form data and send it to the server as a query string
   $newTweet.on('submit', (event) => {
-
     event.preventDefault();
 
+    const data = $newTweet.serialize();
 
+ $.ajax({
+        url: "http://localhost:8080/tweets",
+        mathod: "POST",
+        data: data ,
+        success: function (response) {
+
+          console.log('this is response: ', response);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+           console.log(textStatus, errorThrown);
+        }
+    });   
   });
-
-
+  
 });
