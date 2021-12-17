@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -25,12 +28,20 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main.main-container {
-   width: 90%;
-   margin: 0 auto;
-   margin-bottom: 100px;
-   background-color: #f4f1ec;
-   height: auto;
- }
+main.main-container {
+  margin: 0 30px 100px 30px;
+  background-color: #f4f1ec;
+  height: auto;
+}
 
- 
+@media screen and (min-width: 1024px) {
+  div.wrapper {
+    display: flex;
+    padding: 120px 0;
+  }
+
+  header.page-header,
+  main.main-container {
+    width: 50%;
+  }
+}
