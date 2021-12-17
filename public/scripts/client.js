@@ -6,6 +6,20 @@
 
 $(document).ready(function() {
 
+  const loadTweets = () => {
+    $.ajax({
+      url: "http://localhost:8080/tweets",
+      method: "GET",
+      success: function(tweetsArray) {
+        renderTweets(tweetsArray);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+      }
+    });
+  };
+
+  loadTweets();
   const $newTweet = $('form.new-tweet')
 
   // serialize the form data and send it to the server as a query string
@@ -13,31 +27,21 @@ $(document).ready(function() {
     event.preventDefault();
 
     const data = $newTweet.serialize();
+    postNewTweet(data);
+  });
 
+  const postNewTweet = (tweetObj) => {
     $.ajax({
       url: "http://localhost:8080/tweets",
       method: "POST",
-      data: data,
+      data: tweetObj,
       success: () => {
         loadTweets();
         resetInputElements();
       },
       error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });
-
-    const loadTweets = () => {
-      $.ajax({
-        url: "http://localhost:8080/tweets",
-        method: "GET",
-        success: function(tweetsArray) {
-          renderTweets(tweetsArray);
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-          console.log(textStatus, errorThrown);
-        }
-      });
-    };
-  });
+  }
 
   const resetInputElements = function() {
     $('#tweet-text').val('');
@@ -51,6 +55,7 @@ $(document).ready(function() {
    * @returns createdTweet
    */
   const renderTweets = function(tweetArray) {
+    $('#tweets-container').empty();
     const tweetArrayReversed = tweetArray.reverse();
     for (const tweet of tweetArrayReversed) {
       const newTweet = createTweetElement(tweet);
