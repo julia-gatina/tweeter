@@ -20,13 +20,25 @@ $(document).ready(function() {
   };
 
   loadTweets();
-  const $newTweet = $('form.new-tweet')
+  const $newTweet = $('form.new-tweet');
+  const $textArea = $('#tweet-text');
+  const $tweetCounter = $('#counter');
 
   // serialize the form data and send it to the server as a query string
   $newTweet.on('submit', (event) => {
     event.preventDefault();
 
     const data = $newTweet.serialize();
+    if ($textArea.val() === 0) {
+      alert('Tweet cannot be empty. Please write something.');
+      event.preventDefault();
+      return false;
+    }
+    if ($tweetCounter.hasClass('red-counter')) {
+      alert(`That's a bit too long for a tweet. Please rephrase.`);
+      event.preventDefault();
+      return false;
+    }
     postNewTweet(data);
   });
 
@@ -44,8 +56,8 @@ $(document).ready(function() {
   }
 
   const resetInputElements = function() {
-    $('#tweet-text').val('');
-    $('#counter').val('140');
+    $textArea.val('');
+    $tweetCounter.val('140');
   };
 
 

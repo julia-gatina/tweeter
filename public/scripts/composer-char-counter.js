@@ -13,7 +13,6 @@ $(document).ready(function() {
       $tweetCounter.addClass('red-counter');
     }
     $tweetCounter.val(amountLeft);
-
   })
 
 });
