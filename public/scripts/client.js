@@ -29,12 +29,13 @@ $(document).ready(function() {
     event.preventDefault();
 
     const data = $newTweet.serialize();
+
     if ($textArea.val() === 0) {
       alert('Tweet cannot be empty. Please write something.');
       event.preventDefault();
       return false;
     }
-    if ($tweetCounter.hasClass('red-counter')) {
+    if ($textArea.val().length > 140) {
       alert(`That's a bit too long for a tweet. Please rephrase.`);
       event.preventDefault();
       return false;
