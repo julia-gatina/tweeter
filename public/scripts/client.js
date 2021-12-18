@@ -20,9 +20,11 @@ $(document).ready(function() {
   };
 
   loadTweets();
+
   const $newTweet = $('form.new-tweet');
   const $textArea = $('#tweet-text');
   const $tweetCounter = $('#counter');
+  const $error = $("#error");
 
   // serialize the form data and send it to the server as a query string
   $newTweet.on('submit', (event) => {
@@ -30,15 +32,23 @@ $(document).ready(function() {
 
     const data = $newTweet.serialize();
 
-    if ($textArea.val() === 0) {
-      alert('Tweet cannot be empty. Please write something.');
+    // if user tries to submit an empty tweet, display error message
+    if ($textArea.val().length === 0) {
+      $error.html('Tweet cannot be empty. Please write something.').addClass("error-message");
+
+      setTimeout(function() {
+        $error.addClass("fade-out");
+      }, 3000);
       event.preventDefault();
-      return false;
+      return;
     }
     if ($textArea.val().length > 140) {
-      alert(`That's a bit too long for a tweet. Please rephrase.`);
+      $error.html(`That's a bit too long for a tweet. Please rephrase.`).addClass("error-message");
+      setTimeout(function() {
+        $error.hide()
+      }, 4000);
       event.preventDefault();
-      return false;
+      return;
     }
     postNewTweet(data);
   });
@@ -95,7 +105,6 @@ $(document).ready(function() {
     
       <main>
         <p>${tweetObj.content.text}</p>
-    
       </main>
     
       <footer>

@@ -8,11 +8,12 @@
 
 }
 
-.tweet {
+article.tweet {
   padding: 15px;
   border-style: solid;
   border-color: #97B09F;
   border-width: 5px 5px 5px 5px;
+  border-radius:6px;
   margin-bottom: 25px;
 }
 
