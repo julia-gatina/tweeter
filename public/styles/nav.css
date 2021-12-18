@@ -3,7 +3,7 @@
   top: 0;
   width: 100%vw;
   display: flex;
-  align-items: end; 
+  align-items: center; 
   justify-content: space-between; 
   width: 100%;
   background-color: #99c435;
@@ -23,13 +23,26 @@
 
 #logo:hover {
   color: yellow;
-  transition: 0.5s ease-in-out;
-  filter:blur();
+  transform: scale(104%);
 }
 
 .write-tweet {
+  display:block;
   flex-direction: row;
   text-align: center;
+  color: white;
+  text-shadow: 2px 2px 3px #307207; 
+}
+a.write-tweet:link {
+  text-decoration: none;
+}
+a.write-tweet {
+  text-decoration: none;
+}
+a.write-tweet:hover {
+  rotate: (45deg);
+  transform:scale(105%);
+  color: yellow;
 }
 
 .write-tweet p {

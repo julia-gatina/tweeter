@@ -32,16 +32,19 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/compose-new-tweet.js"></script>
 </head>
 
 <body>
   <!-- Top nav bar (fixed) -->
   <nav class="navbar">
     <div id="logo"><span>tweeter</span></div>
-    <div class="write-tweet">
-      <p><b>Write</b> a new tweet</p>
+
+    <a class="write-tweet" href=""><div >
+      <p><strong>Write</strong> a new tweet</p>
       <i class="fas fa-angle-double-down"></i>
-    </div>
+    </div></a>
+    
   </nav>
 
   <div class="wrapper">
@@ -57,7 +60,8 @@
 
     <!-- Page-specific (main) content here -->
     <main class="main-container">
-      <section class="new-tweet">
+      <div>
+        <section id="tweet-form">
         <p id="error" value=""></p>
         <form class="new-tweet" method="POST" action="/tweets">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
@@ -67,7 +71,8 @@
           </div>
         </form>
       </section>
-
+    </div>
+    
       <!-- Posted tweets -->
       <section id="tweets-container">
         <!-- tweet <article>s added here dynamically -->

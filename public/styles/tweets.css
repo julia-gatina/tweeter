@@ -28,13 +28,18 @@ article.tweet main {
 
 .tweet:hover {
   box-shadow: 2px 2px 8px #99c435;
+  transform: scale(101%);
 }
 
 .tweet header div.username {
   display: flex;
   width: 30%;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
+}
+
+div.username img {
+  padding-right: 20px;
 }
 
 article.tweet footer {
@@ -45,11 +50,11 @@ article.tweet footer {
   padding-top: 10px;
 }
 
-.fas {
+footer div i.fas {
   justify-content: space-around;
   margin: 5px;
 }
 
-.fas:hover {
+footer div i.fas:hover {
   color: #99c435;
 }
