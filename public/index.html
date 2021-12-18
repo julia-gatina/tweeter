@@ -40,11 +40,13 @@
   <nav class="navbar">
     <div id="logo"><span>tweeter</span></div>
 
-    <a class="write-tweet" href=""><div >
-      <p><strong>Write</strong> a new tweet</p>
-      <i class="fas fa-angle-double-down"></i>
-    </div></a>
-    
+    <a class="write-tweet" href="">
+      <div>
+        <p><strong>Write</strong> a new tweet</p>
+        <i class="fas fa-angle-double-down"></i>
+      </div>
+    </a>
+
   </nav>
 
   <div class="wrapper">
@@ -62,17 +64,17 @@
     <main class="main-container">
       <div>
         <section id="tweet-form">
-        <p id="error" value=""></p>
-        <form class="new-tweet" method="POST" action="/tweets">
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div>
-            <button id="tweet-button" type="submit">Tweet</button>
-            <output name="counter" for="tweet-text" id="counter">140</output>
-          </div>
-        </form>
-      </section>
-    </div>
-    
+          <p id="error" value=""></p>
+          <form class="new-tweet" method="POST" action="/tweets">
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+            <div>
+              <button id="tweet-button" type="submit">Tweet</button>
+              <output name="counter" for="tweet-text" id="counter">140</output>
+            </div>
+          </form>
+        </section>
+      </div>
+
       <!-- Posted tweets -->
       <section id="tweets-container">
         <!-- tweet <article>s added here dynamically -->
