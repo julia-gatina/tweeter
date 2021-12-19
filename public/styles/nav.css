@@ -52,4 +52,18 @@ a.write-tweet:hover {
 .write-tweet i {
   text-shadow: 2px 2px 3px #307207;
   margin: 0;
+  animation: MoveUpDown 1s linear infinite;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  padding-top: 5px;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 10px;
+  }
 }

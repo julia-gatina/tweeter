@@ -1,8 +1,8 @@
 # Tweeter Project
 
-Tweeter is a cute single-page application that works similar to its big brother Twitter, just on a smaller scale.
+Tweeter is a simplified single-page application that works similar to its big brother Twitter, just on a smaller scale.
 
-It was build using HTML, CSS, JS, jQuery, AJAX, Node, Express, and a teaspoon of magic 💫
+It was build using HTML, CSS, JS, jQuery, AJAX, and a teaspoon of magic 💫
 
 ## Screenshots
 
