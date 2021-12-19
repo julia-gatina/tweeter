@@ -14,24 +14,6 @@ form.new-tweet {
   background-color: #f4f1ec;
 }
 
-#tweet-button {
-  font-family: "Bungee";
-  font-size: 20px;
-  color: darkslategrey;
-  width: 100px;
-  height: 40px;
-  border-radius: 10%;
-  box-shadow: 1px 1px 3px darkslategrey;
-  background-image: linear-gradient(#A2E039, #d7edb2, #A2E039);
-  border-color: white;
-  filter:sepia();
-  transition: filter 0.3s ease-in-out;
-}
-
-#tweet-button:hover {
-  filter:none;
-}
-
 /* entered characters counter */
 #counter {
   font-family: "Bungee";
@@ -55,10 +37,6 @@ form.new-tweet {
   box-shadow: 2px 2px 2px  slategrey;
   color: white;
   opacity: 80%;
+  
 }
 
-/* to hide error message */
-.fade-out {
-	animation: fadeOut 2s ease-in-out;
-  	opacity: 0;
-}
