@@ -5,15 +5,14 @@ $(document).ready(function() {
   const $upButton = $('#back-to-top');
  
   $tweetForm.hide();
-  $writeTweetLink.show();
   $upButton.hide();
 
-  // Once 'write new tweet' clicked, show new tweet form
+  // toggle tweet form on click (button in nav bar) and make focus on text area
   $writeTweetLink.on('click', function(event) {
     event.preventDefault();
-
-    $tweetForm.show("fast");
-    $textArea.focus();
+    $tweetForm.slideToggle('slow', function () {
+      $textArea.focus();
+    });
   });
 
   $(document).scroll(function() {
