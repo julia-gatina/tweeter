@@ -16,8 +16,7 @@ $(document).ready(function() {
 
     $tweetForm.show("fast");
     $textArea.focus();
-    $writeTweet.hide("slow", "linear");
-
+    $writeTweet.hide("fast", "linear");
   });
 
   $tweetButton.on('click', function(event) {
@@ -25,6 +24,7 @@ $(document).ready(function() {
     // if user tries to submit an empty tweet, display error message
     if ($textArea.val().length === 0) {
       $error.html('Tweet cannot be empty. Please write something.').addClass("error-message");
+      $error.show("fast");
 
       setTimeout(function() {
         $error.hide("slow");
@@ -37,6 +37,7 @@ $(document).ready(function() {
     // if user tries to submit tweet more than 140 chars long, display error message
     if ($textArea.val().length > 140) {
       $error.html(`That's a bit too long for a tweet. Please rephrase.`).addClass("error-message");
+      $error.show("fast");
 
       setTimeout(function() {
         $error.hide("slow");
@@ -45,7 +46,7 @@ $(document).ready(function() {
       event.preventDefault();
       return false;
     }
-    
+
   });
 
   $upButton.on('click', function() {
