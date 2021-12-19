@@ -8,13 +8,12 @@ $(document).ready(function() {
   $writeTweetLink.show();
   $upButton.hide();
 
-  // Once 'write new tweet' clicked, show new tweet form and hide 'write-new-tweet'
+  // Once 'write new tweet' clicked, show new tweet form
   $writeTweetLink.on('click', function(event) {
     event.preventDefault();
 
     $tweetForm.show("fast");
     $textArea.focus();
-    $writeTweetLink.hide("fast", "linear");
   });
 
   $(document).scroll(function() {
