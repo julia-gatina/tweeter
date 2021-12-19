@@ -6,11 +6,9 @@ It was build using HTML, CSS, JS, jQuery, AJAX, Node, Express, and a teaspoon of
 
 ## Screenshots
 
-!["Desciptioin](URL)
-!["Desciptioin](URL)
-!["Desciptioin](URL)
-!["Desciptioin](URL)
-!["Desciptioin](URL)
+!["Compose new tweet box"](https://github.com/julia-gatina/tweeter/blob/master/docs/tweet-compose-box.png?raw=true)
+
+!["Posted tweet"](https://github.com/julia-gatina/tweeter/blob/master/docs/posted-tweet.png?raw=true)
 
 ## Dependencies
 
