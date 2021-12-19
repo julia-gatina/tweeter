@@ -29,6 +29,7 @@ form.new-tweet {
 
 /* for error messages when submitting a tweet */
 .error-message {
+  display: none;
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;

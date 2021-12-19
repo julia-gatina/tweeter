@@ -9,8 +9,12 @@ $(document).ready(function() {
   const $newTweet = $('form.new-tweet');
   const $textArea = $('#tweet-text');
   const $tweetCounter = $('#counter');
+  const $errorToast = $("#error");
 
-  // Load tweets send to the server, GET request
+  
+  /**
+   * Loads tweets from the server, GET request
+   */
   const loadTweets = () => {
     $.ajax({
       url: "http://localhost:8080/tweets",
@@ -41,7 +45,7 @@ $(document).ready(function() {
   };
 
   /**
-   * takes in single tweet object and creates a markup that will be used to render tweets dynamically
+   * creates a markup that will be used to render tweets dynamically
    * @param {*} single tweetObj 
    * @returns tweet markup
    */
@@ -73,16 +77,52 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  // Serialize the form data and send it to the server as a query string
+  /**
+   * displays error message and hides it after 3 sec. 
+   * @param {*} message text to display
+   */
+  const showToastError = (message) => {
+    $errorToast.html(message);
+    $errorToast.show("fast");
+
+    setTimeout(function() {
+      $errorToast.hide("slow");
+    }, 3000);
+  }
+
+/**
+ * validates if entered text for tweet meets the criteria
+ * @returns boolean 
+ */
+  const validateInput = () => {
+    let isValid = true;
+    // if user tries to submit an empty tweet, display error message
+    if ($textArea.val().length === 0) {
+      showToastError('Tweet cannot be empty. Please write something.');
+      isValid = false;
+
+      // if user tries to submit tweet more than 140 chars long, display error message
+    } else if ($textArea.val().length > 140) {
+      showToastError(`That's a bit too long for a tweet. Please rephrase.`);
+      isValid = false;
+    }
+    return isValid;
+  };
+
+  // serialize the form data and send it to the server as a query string
   $newTweet.on('submit', (event) => {
     event.preventDefault();
-
-    const data = $newTweet.serialize();
-
-    postNewTweet(data);
+    
+    if (validateInput()) { 
+      const data = $newTweet.serialize();
+      postNewTweet(data);
+    }
   });
 
-  // Send 'POST' request to the server
+  /**
+   * sends 'POST request to the server
+   * @param {*} tweetObj 
+   */
   const postNewTweet = (tweetObj) => {
     $.ajax({
       url: "http://localhost:8080/tweets",
@@ -96,7 +136,9 @@ $(document).ready(function() {
     });
   }
 
-  // reset 'compose tweet' input and char counter after a tweet posted
+  /**
+   * resets 'compose tweet' input and char counter after a tweet posted
+   */
   const resetInputElements = function() {
     $textArea.val('');
     $tweetCounter.val('140');
